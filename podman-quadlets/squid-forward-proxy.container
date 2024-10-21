@@ -1,0 +1,11 @@
+[Container]
+Image=docker.io/sameersbn/squid:latest
+ContainerName=squid-forward-proxy
+PublishPort=3128:3128
+Volume=%h/proxy/squid/squid.conf:/etc/squid/squid.conf:ro
+
+[Service]
+Restart=always
+
+[Install]
+WantedBy=default.target

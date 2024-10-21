@@ -1,0 +1,13 @@
+[Container]
+Image=docker.io/library/nginx:latest
+PublishPort=8080:80
+PublishPort=8443:443
+Volume=%h/proxy/nginx/nginx.conf:/etc/nginx/nginx.conf:ro
+Volume=%h/proxy/nginx/conf.d:/etc/nginx/conf.d:ro
+Volume=%h/proxy/nginx/ssl:/etc/nginx/ssl:ro
+
+[Service]
+Restart=always
+
+[Install]
+WantedBy=default.target

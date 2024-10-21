@@ -1,0 +1,15 @@
+network:
+    version: 2
+    ethernets:
+        enp1s0:
+            dhcp4: true
+            dhcp6: true
+            match:
+                macaddress: 36:81:57:3f:08:80
+            set-name: enp1s0
+        enp2s0:
+            dhcp4: true
+            dhcp6: true
+            match:
+                macaddress: 36:32:74:63:f5:7f
+            set-name: enp2s0

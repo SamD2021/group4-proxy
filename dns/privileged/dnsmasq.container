@@ -1,0 +1,14 @@
+[Container]
+Image=docker.io/dockurr/dnsmasq:latest
+ContainerName=dnsmasq
+PublishPort=192.168.1.168:53:53/udp
+PublishPort=192.168.1.168:53:53/tcp
+Environment=DNS1="10.52.0.88"
+AddCapability=NET_ADMIN
+Volume=/home/blueteam/dns/dnsmasq.conf:/etc/dnsmasq.conf
+
+[Service]
+Restart=always
+
+[Install]
+WantedBy=multi-user.target

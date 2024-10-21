@@ -1,0 +1,14 @@
+[Container]
+Image=docker.io/dockurr/dnsmasq:latest
+ContainerName=dnsmasq
+Network=host
+PublishPort=5353:53/udp
+PublishPort=5353:53/tcp
+Environment=DNS1="10.52.0.88"
+AddCapability=NET_ADMIN
+
+[Service]
+Restart=always
+
+[Install]
+WantedBy=default.target
